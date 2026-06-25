@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "ElectroMart API Collection",
+    "description": "Complete API testing collection for ElectroMart backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/health"
+      }
+    },
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/api/auth/register",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@test.com\",\n  \"password\": \"password123\"\n}"}
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/api/auth/login",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"email\": \"admin@electromart.test\",\n  \"password\": \"admin123\"\n}"}
+      }
+    },
+    {
+      "name": "Products - Get All",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/products"
+      }
+    },
+    {
+      "name": "Orders - Create",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/api/orders",
+        "header": [{"key": "Authorization", "value": "Bearer {{token}}"}, {"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"items\": [{\n    \"name\": \"iPhone 16\",\n    \"price\": 79900,\n    \"quantity\": 1\n  }],\n  \"total\": 79900,\n  \"customer\": \"John Doe\",\n  \"email\": \"john@test.com\"\n}"}
+      }
+    }
+  ],
+  "variable": [
+    {"key": "base_url", "value": "http://localhost:5000", "type": "string"},
+    {"key": "token", "value": "", "type": "string"}
+  ]
+}
