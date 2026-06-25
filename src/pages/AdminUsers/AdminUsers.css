@@ -1,0 +1,67 @@
+.admin-users {
+  display: grid;
+  gap: 24px;
+}
+
+.user-summary {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.user-summary div {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  padding: 22px;
+}
+
+.user-summary span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.user-summary strong {
+  font-size: 28px;
+}
+
+.user-tools div {
+  display: flex;
+  gap: 10px;
+}
+
+.user-tools input,
+.user-tools select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  min-height: 40px;
+  padding: 8px 10px;
+}
+
+.user-action {
+  background: #eef2f7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 36px;
+  padding: 8px 12px;
+}
+
+@media (max-width: 800px) {
+  .user-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .user-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .user-tools div {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,11 @@
+.auth-page {
+  align-items: center;
+  display: flex;
+  min-height: calc(100vh - 72px);
+}
+
+.error-notice {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}

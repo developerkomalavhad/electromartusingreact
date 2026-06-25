@@ -1,0 +1,34 @@
+.auth-page {
+  align-items: center;
+  display: flex;
+  min-height: calc(100vh - 72px);
+}
+
+.form-panel h1,
+.form-panel p {
+  margin: 0;
+}
+
+.form-panel h1 {
+  font-size: 34px;
+}
+
+.form-panel > div p,
+.auth-switch {
+  color: var(--muted);
+}
+
+.auth-switch {
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--brand-dark);
+  font-weight: 900;
+}
+
+.error-notice {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}

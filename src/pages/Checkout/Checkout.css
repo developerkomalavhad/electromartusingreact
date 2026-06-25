@@ -1,0 +1,48 @@
+.checkout-page {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.checkout-form {
+  margin: 0;
+  max-width: none;
+}
+
+.checkout-summary {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  position: sticky;
+  top: 96px;
+}
+
+.checkout-summary h2 {
+  margin: 0 0 4px;
+}
+
+.checkout-summary div {
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.checkout-summary strong {
+  color: var(--ink);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .checkout-page {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+}

@@ -1,0 +1,91 @@
+.admin-products {
+  display: grid;
+  gap: 28px;
+}
+
+.admin-product-form {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 22px;
+}
+
+.admin-product-form label {
+  color: var(--muted);
+  display: grid;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.admin-product-form input,
+.admin-product-form select,
+.admin-product-form textarea,
+.panel-title input {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+
+.admin-product-form textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.wide-field {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.product-cell {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.product-cell img {
+  border-radius: 8px;
+  height: 54px;
+  object-fit: cover;
+  width: 54px;
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.table-actions button {
+  background: #eef2f7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 36px;
+  padding: 8px 12px;
+}
+
+.table-actions button:last-child {
+  background: #fef2f2;
+  color: var(--danger);
+}
+
+@media (max-width: 900px) {
+  .admin-product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-title {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

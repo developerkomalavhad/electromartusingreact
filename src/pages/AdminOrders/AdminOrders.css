@@ -1,0 +1,48 @@
+.admin-orders {
+  display: grid;
+  gap: 24px;
+}
+
+.order-tools div {
+  display: flex;
+  gap: 10px;
+}
+
+.order-tools input,
+.order-tools select,
+.status-select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  min-height: 40px;
+  padding: 8px 10px;
+}
+
+.subtext {
+  color: var(--muted);
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.status-select {
+  background: #f8fafc;
+  font-weight: 800;
+}
+
+.admin-empty {
+  color: var(--muted);
+  padding: 22px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .order-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .order-tools div {
+    flex-direction: column;
+  }
+}
