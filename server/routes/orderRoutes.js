@@ -1,6 +1,7 @@
 const express = require("express");
 const Order = require("../models/Order");
 const { protect, adminOnly } = require("../middleware/auth");
+const { validateOrder, validateOrderStatus } = require("../middleware/validation");
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ router.get("/", protect, adminOnly, async (req, res, next) => {
   }
 });
 
-router.post("/", protect, async (req, res, next) => {
+router.post("/", protect, validateOrder, async (req, res, next) => {
   try {
     const order = await Order.create({
       ...req.body,
@@ -28,7 +29,7 @@ router.post("/", protect, async (req, res, next) => {
   }
 });
 
-router.patch("/:id/status", protect, adminOnly, async (req, res, next) => {
+router.patch("/:id/status", protect, adminOnly, validateOrderStatus, async (req, res, next) => {
   try {
     const order = await Order.findByIdAndUpdate(
       req.params.id,

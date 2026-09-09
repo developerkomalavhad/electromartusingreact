@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const createToken = require("../utils/token");
 const { protect } = require("../middleware/auth");
+const { validateRegister, validateLogin } = require("../middleware/validation");
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ function sendUser(res, user) {
   });
 }
 
-router.post("/register", async (req, res, next) => {
+router.post("/register", validateRegister, async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
 
@@ -40,7 +41,7 @@ router.post("/register", async (req, res, next) => {
   }
 });
 
-router.post("/login", async (req, res, next) => {
+router.post("/login", validateLogin, async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });

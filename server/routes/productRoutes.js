@@ -1,6 +1,7 @@
 const express = require("express");
 const Product = require("../models/Product");
 const { protect, adminOnly } = require("../middleware/auth");
+const { validateProduct } = require("../middleware/validation");
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", protect, adminOnly, async (req, res, next) => {
+router.post("/", protect, adminOnly, validateProduct, async (req, res, next) => {
   try {
     const product = await Product.create(req.body);
     res.status(201).json(product);
